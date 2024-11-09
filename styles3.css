@@ -1,0 +1,100 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(45deg, #F9C4D2, #A66BB2); /* Gradient */
+}
+
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #F9C4D2; /* Change color on hover */
+}
+
+/* Store Styles */
+.store-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content */
+    padding: 100px 20px; /* Top padding for navbar */
+}
+
+.store-container h1 {
+    margin-bottom: 40px; /* Space below the title */
+    color: white; /* Optional: change to a color that contrasts with the background */
+}
+
+.products-grid {
+    display: grid; /* Use grid layout */
+    grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+    gap: 20px; /* Space between boxes */
+    width: 80%; /* Width of the grid */
+}
+
+.product-box {
+    background-color: white; /* Background color for products */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Box shadow */
+    padding: 20px; /* Padding around product */
+    text-align: center; /* Center text */
+    transition: transform 0.3s, box-shadow 0.3s; /* For hover effect */
+}
+
+.product-box:hover {
+    transform: scale(1.05); /* Scale effect on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Shadow on hover */
+}
+
+.product-box img {
+    width: 100%; /* Full width of the box */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.buy-button {
+    margin-top: 10px; /* Space above button */
+    padding: 10px;
+    background-color: #E2A7C0; /* Button color */
+    color: white; /* Button text color */
+    border: none;
+    border-radius: 5px; /* Rounded corners for the button */
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.buy-button:hover {
+    background-color: #F9C4D2; /* Change color on hover */
+}

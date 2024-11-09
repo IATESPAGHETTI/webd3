@@ -1,0 +1,131 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(45deg, #F9C4D2, #A66BB2); /* Same gradient as land.html */
+}
+
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #F9C4D2;
+}
+
+/* Dashboard Styles */
+.dashboard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height of the viewport */
+}
+
+.dashboard-container {
+    background-color: white; /* Background color for the outer box */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Box shadow */
+    padding: 30px; /* Padding around the content */
+    width: 80%; /* Responsive width */
+    display: flex; /* Use flexbox for horizontal alignment */
+    flex-wrap: wrap; /* Allow boxes to wrap to the next line if necessary */
+    gap: 20px; /* Space between boxes */
+}
+
+.dashboard-container h1 {
+    width: 100%; /* Ensure the title takes full width */
+    text-align: center; /* Center the title */
+    margin-bottom: 20px; /* Space below the title */
+}
+
+.dashboard-box {
+    flex: 1; /* Allow the boxes to grow and fill the available space */
+    min-width: 200px; /* Set a minimum width for the boxes */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Individual box shadow */
+    transition: transform 0.3s, box-shadow 0.3s; /* For hover effect */
+}
+
+.dashboard-box:hover {
+    transform: scale(1.05); /* Scale effect on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Shadow on hover */
+}
+
+.symptoms-graph-container {
+    width: 100%; /* Full width for the container */
+    display: flex; /* Use flexbox for horizontal alignment of symptoms and graph */
+    gap: 20px; /* Space between the symptoms and graph boxes */
+}
+
+.graph-box {
+    flex: 2; /* This box can take up more space */
+}
+
+/* Input Box Styles */
+.input-box {
+    width: 100%; /* Full width */
+    padding: 12px; /* Increased padding */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 10px; /* Space above input boxes */
+}
+
+/* Button Styles */
+.save-button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #E2A7C0;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.save-button:hover {
+    background-color: #F9C4D2;
+}
+.cat-gif-container {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: center; /* Center the images */
+    margin-top: 20px; /* Space above the GIFs */
+    gap: 10px; /* Space between the images */
+}
+
+.cat-gif {
+    width: 50px; /* Set width for the cat GIFs */
+    height: auto; /* Maintain aspect ratio */
+}

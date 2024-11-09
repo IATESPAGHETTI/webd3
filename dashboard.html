@@ -1,0 +1,113 @@
+<!-- dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Period Tracker</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <!-- Greeting Section -->
+    <div id="greeting" class="greeting"></div>
+
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo.png" alt="Logo" style="height: 40px;">
+        </div>
+        <div class="nav-links">
+            <a href="login.html">My Account</a>
+            <a href="store.html">Store</a>
+            <a href="land.html">Home</a>
+        </div>
+    </nav>
+
+    <div class="dashboard">
+        <div class="dashboard-container">
+            <h1>
+                <img src="dash.png" alt="Dashboard" style="width: 100%; max-width: 200px;">
+            </h1>
+            <div class="dashboard-box">
+                <h2>Add Date for Period Start</h2>
+                <input type="date" id="periodStartDate" class="input-box" required>
+                <button class="save-button" onclick="saveData()">Save</button>
+            </div>
+            <div class="dashboard-box">
+                <h2>Set Ovulation Time Period</h2>
+                <input type="text" id="ovulationDate" class="input-box" placeholder="Ovulation Start Date" required>
+                <button class="save-button" onclick="saveData()">Save</button>
+            </div>
+            <div class="dashboard-box">
+                <h2>Predicted Date</h2>
+                <p id="predictedDate">This date will be calculated based on ovulation.</p>
+                <button class="save-button" id="predictButton">Calculate</button>
+            </div>
+            <div class="symptoms-graph-container">
+                <div class="dashboard-box">
+                    <h2>Symptoms</h2>
+                    <input type="text" id="symptoms" class="input-box" placeholder="Enter Symptoms" required>
+                    <button class="save-button" onclick="saveData()">Save</button>
+                </div>
+                <div class="dashboard-box graph-box">
+                    <h2>Graph</h2>
+                    <p>Graph representation will be shown here.</p>
+                    <button class="save-button">Generate Graph</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Display greeting
+        const loggedInEmail = sessionStorage.getItem('loggedInUser');
+        if (loggedInEmail) {
+            const userData = JSON.parse(localStorage.getItem(loggedInEmail));
+            if (userData) {
+                document.getElementById('greeting').textContent = `Hello, ${userData.name}!`;
+            }
+        }
+
+        // Save user data
+        function saveData() {
+            if (loggedInEmail) {
+                const periodStartDate = document.getElementById('periodStartDate').value;
+                const ovulationDate = document.getElementById('ovulationDate').value;
+                const symptoms = document.getElementById('symptoms').value;
+                
+                // Retrieve and update user data
+                let userData = JSON.parse(localStorage.getItem(loggedInEmail)) || {};
+                userData.periodStartDate = periodStartDate;
+                userData.ovulationDate = ovulationDate;
+                userData.symptoms = symptoms;
+                
+                // Store updated data
+                localStorage.setItem(loggedInEmail, JSON.stringify(userData));
+                alert("Data saved successfully!");
+            }
+        }
+
+        // Prediction function
+        document.getElementById('predictButton').addEventListener('click', () => {
+            if (loggedInEmail) {
+                const userData = JSON.parse(localStorage.getItem(loggedInEmail));
+                
+                if (userData && userData.periodStartDate) {
+                    const periodStartDate = new Date(userData.periodStartDate);
+                    
+                    // Assuming a 28-day cycle for simplicity
+                    const predictedDate = new Date(periodStartDate);
+                    predictedDate.setDate(predictedDate.getDate() + 28);
+                    
+                    document.getElementById('predictedDate').textContent = `Predicted Next Period Date: ${predictedDate.toDateString()}`;
+                    
+                    // Save prediction
+                    userData.predictedDate = predictedDate.toDateString();
+                    localStorage.setItem(loggedInEmail, JSON.stringify(userData));
+                } else {
+                    alert("Please enter your period start date first.");
+                }
+            }
+        });
+    </script>
+</body>
+</html>

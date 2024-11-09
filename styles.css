@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(45deg, #F9C4D2, #E2A7C0);
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 400px; /* Extended width */
+    position: relative; /* For absolute positioning of image */
+}
+
+.signin-image {
+    width: 100%; /* Full width of the container */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 20px; /* Space between image and form */
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #E2A7C0;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-button:hover {
+    background-color: #F9C4D2;
+}
+
+.register-link {
+    margin-top: 20px;
+}
+
+.register-link a {
+    color: #E2A7C0;
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}

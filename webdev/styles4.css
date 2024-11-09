@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eae7f7;
+    color: black;
+}
+
+.container {
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #f0ecfc;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    height: 100vh;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.main-content {
+    margin-left: 20px;
+    padding: 40px 20px;
+    flex-grow: 1;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 80%;
+}
+
+.product-info {
+    padding: 20px;
+}
+
+.product {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.total-section {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 20px;
+}
+
+.total-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.total-amount,
+.pay-button {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    text-align: right;
+}
+
+.pay-button {
+    background-color: black;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 20px;
+    padding: 12px 20px;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.pay-button:hover {
+    background-color: #333;
+}
+
+.logo-container {
+    margin-bottom: 40px;
+}
+
+.logo {
+    width: 150px;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+nav a {
+    text-decoration: none;
+    color: #2e2d88;
+    font-weight: bold;
+    background-color: #ffffff;
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+nav a:hover {
+    background-color: #4e4db8;
+    color: white;
+    transform: translateY(-5px);
+}
+
+nav a.active {
+    background-color: #4e4db8;
+    color: white;
+}
+
+@media screen and (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    .main-content {
+        margin-left: 20px;
+    }
+}

@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eae7f7;
+    color: black;
+}
+
+.container {
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #f0ecfc;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    height: 100vh;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.main-content {
+    padding: 30px 20px;
+    margin-left: 20px;
+    margin-top: 30px;
+    flex-grow: 1;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 1250px;
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.dashboard-container {
+    padding: 20px;
+}
+
+.dashboard-boxes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding-top: 20px;
+}
+
+.box {
+    border-radius: 15px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-wide {
+    grid-column: span 2;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.dashboard-box-image {
+    width: 80%;
+    height: auto;
+    border-radius: 15px;
+    margin-top: 15px;
+}
+
+.logo-container {
+    margin-bottom: 40px;
+}
+
+.logo {
+    width: 150px;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+nav a {
+    text-decoration: none;
+    color: #2e2d88;
+    font-weight: bold;
+    background-color: #ffffff;
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+nav a:hover {
+    background-color: #4e4db8;
+    color: white;
+    transform: translateY(-5px);
+}
+
+nav a.active {
+    background-color: #4e4db8;
+    color: white;
+}
+
+@media screen and (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    .main-content {
+        margin-left: 20px;
+    }
+
+    .dashboard-boxes {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .box {
+        padding: 15px;
+        height: 150px;
+    }
+
+    .dashboard-box-image {
+        max-width: 300px;
+    }
+}

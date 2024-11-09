@@ -1,0 +1,51 @@
+<!-- login.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Period Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <img src="signin.png" alt="Sign In" class="signin-image">
+        <h1>Login to Your Account</h1>
+        <form id="loginForm" class="login-form">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" required>
+            </div>
+            <button type="submit" class="login-button">Log In</button>
+        </form>
+        <p class="register-link">Don't have an account? <a href="reg.html">Register here</a></p>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Retrieve user data from localStorage
+            const userData = JSON.parse(localStorage.getItem(email));
+
+            // Validate user credentials
+            if (userData && userData.password === password) {
+                // Store logged-in user's email in sessionStorage
+                sessionStorage.setItem('loggedInUser', email);
+                
+                alert('Login successful!');
+                window.location.href = 'dashboard.html';
+            } else {
+                alert('Invalid email or password. Please try again.');
+            }
+        });
+    </script>
+</body>
+</html>

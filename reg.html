@@ -1,0 +1,52 @@
+<!-- reg.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Period Tracker</title>
+    <link rel="stylesheet" href="reg.css">
+</head>
+<body>
+    <div class="login-container">
+        <img src="signup.jpg" alt="Sign Up" class="signin-image">
+        <h1>Create Your Account</h1>
+        <form id="registerForm" class="register-form">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit" class="login-button">Register</button>
+        </form>
+        <p class="register-link">Already have an account? <a href="login.html">Log in here</a></p>
+    </div>
+
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Check if the user already exists
+            if (localStorage.getItem(email)) {
+                alert('User already exists! Please use a different email.');
+            } else {
+                // Save the user data to localStorage
+                localStorage.setItem(email, JSON.stringify({ name, password }));
+                alert('Registration successful! Please log in.');
+                window.location.href = 'login.html';
+            }
+        });
+    </script>
+</body>
+</html>
