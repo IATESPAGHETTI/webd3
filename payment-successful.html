@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Successful - Period Tracker</title>
+    <link rel="stylesheet" href="payment-successful.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo.png" alt="Logo" style="height: 40px;">
+        </div>
+        <div class="nav-links">
+            <a href="login.html">My Account</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="land.html">Home</a>
+        </div>
+    </nav>
+
+    <div class="success-section">
+        <h2>Payment Successful!</h2>
+        <p>Your payment has been processed successfully. Thank you for your purchase!</p>
+        
+        <div class="order-summary">
+            <h3>Order Summary</h3>
+            <div id="product-list"></div>
+            <p id="total-price">Total: $0</p>
+        </div>
+
+        <button onclick="window.location.href='dashboard.html'">Go to Dashboard</button>
+    </div>
+
+    <script>
+        // Get the cart from localStorage
+        const cart = JSON.parse(localStorage.getItem('cart'));
+
+        if (cart) {
+            let totalPrice = 0;
+            const productListDiv = document.getElementById('product-list');
+
+            // Loop through each product in the cart and add to the order summary
+            for (const product in cart) {
+                const productData = cart[product];
+                const productDiv = document.createElement('div');
+                productDiv.classList.add('product-summary');
+                
+                productDiv.innerHTML = `
+                    <img src="cat.gif" alt="Product">
+                    <h3>${product}</h3>
+                    <p>Quantity: ${productData.quantity}</p>
+                    <p>Price: $${productData.price}</p>
+                    <p>Total: $${(productData.price * productData.quantity).toFixed(2)}</p>
+                `;
+
+                totalPrice += productData.price * productData.quantity;
+                productListDiv.appendChild(productDiv);
+            }
+
+            // Update the total price
+            document.getElementById('total-price').textContent = `Total: $${totalPrice.toFixed(2)}`;
+        } else {
+            alert("No items in the cart.");
+        }
+        const orderDetails = JSON.parse(localStorage.getItem('orderDetails'));
+
+    if (orderDetails) {
+        document.querySelector('h3').textContent = `Order ID: ${orderDetails.orderId}`;
+        document.querySelector('#total-price').textContent = `Total: $${orderDetails.totalAmount.toFixed(2)}`;
+    } else {
+        alert("No order details found.");
+    }
+    </script>
+</body>
+</html>

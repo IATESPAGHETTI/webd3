@@ -1,4 +1,4 @@
-/* Reset and Base Styles */
+/* General Reset and Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -7,26 +7,28 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(45deg, #F9C4D2, #A66BB2); /* Gradient */
+    color: #333;
+    background-color: #f9f9f9;
+    line-height: 1.6;
 }
 
+/* Navbar Styles */
 .navbar {
-    position: absolute;
+    position: sticky;
     top: 0;
-    left: 0;
     width: 100%;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 10;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
 }
 
-.logo {
-    font-size: 1.5em;
-    font-weight: bold;
-    color: white;
+.navbar .logo img {
+    height: 40px;
 }
 
 .nav-links {
@@ -35,66 +37,122 @@ body {
 }
 
 .nav-links a {
-    color: white;
+    color: #333;
     text-decoration: none;
     font-weight: 600;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #F9C4D2; /* Change color on hover */
+    color: #F9C4D2;
 }
 
-/* Store Styles */
+/* Store Container */
 .store-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center content */
-    padding: 100px 20px; /* Top padding for navbar */
+    padding: 50px 20px;
+    text-align: center;
 }
 
-.store-container h1 {
-    margin-bottom: 40px; /* Space below the title */
-    color: white; /* Optional: change to a color that contrasts with the background */
+/* Store Header */
+.store-container h1 img {
+    width: 150px;
+    margin-bottom: 30px;
 }
 
+/* Products Grid */
 .products-grid {
-    display: grid; /* Use grid layout */
-    grid-template-columns: repeat(3, 1fr); /* Three equal columns */
-    gap: 20px; /* Space between boxes */
-    width: 80%; /* Width of the grid */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    justify-items: center;
 }
 
 .product-box {
-    background-color: white; /* Background color for products */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Box shadow */
-    padding: 20px; /* Padding around product */
-    text-align: center; /* Center text */
-    transition: transform 0.3s, box-shadow 0.3s; /* For hover effect */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .product-box:hover {
-    transform: scale(1.05); /* Scale effect on hover */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Shadow on hover */
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
 .product-box img {
-    width: 100%; /* Full width of the box */
-    height: auto; /* Maintain aspect ratio */
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
 }
 
-.buy-button {
-    margin-top: 10px; /* Space above button */
-    padding: 10px;
-    background-color: #E2A7C0; /* Button color */
-    color: white; /* Button text color */
-    border: none;
-    border-radius: 5px; /* Rounded corners for the button */
-    cursor: pointer;
-    transition: background-color 0.3s; /* Smooth transition */
+.product-box h3 {
+    font-size: 1.6em;
+    margin-bottom: 10px;
 }
 
-.buy-button:hover {
-    background-color: #F9C4D2; /* Change color on hover */
+.product-box p {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    color: #666;
+}
+
+.product-box input[type="number"] {
+    width: 60px;
+    padding: 5px;
+    font-size: 1.2em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.product-box input[type="number"]:focus {
+    border-color: #E2A7C0;
+}
+
+#confirm-button {
+    display: inline-block;
+    padding: 15px 25px;
+    background-color: #E2A7C0;
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    border-radius: 50px;
+    text-decoration: none;
+    margin-top: 40px;
+    transition: background-color 0.3s ease;
+}
+
+#confirm-button:hover {
+    background-color: #F9C4D2;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+
+    .product-box {
+        width: 80%;
+        max-width: 280px;
+    }
+
+    #confirm-button {
+        font-size: 1.3em;
+        padding: 12px 22px;
+    }
 }

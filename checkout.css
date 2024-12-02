@@ -1,0 +1,191 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background: linear-gradient(45deg, #EBBBA7, #CFC7F8);
+    background-size: 200% 200%;
+    animation: gradientAnimation 5s ease infinite;
+    min-height: 100vh;
+}
+
+/* Hero Section with Enhanced Animated Gradient */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Navbar Styling */
+.navbar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+.navbar .logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #E2A7C0;
+}
+
+.navbar .nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.navbar .nav-links a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1em;
+    transition: color 0.3s;
+}
+
+.navbar .nav-links a:hover {
+    color: #E2A7C0;
+}
+
+/* Checkout Section with Transparent Background */
+.checkout-section {
+    margin-top: 100px;
+   
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  
+    backdrop-filter: blur(10px); /* Optional: Adds a blur effect to the background */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.checkout-section h2 {
+    font-size: 2.5em;
+    color: #E2A7C0;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Order Summary */
+.order-summary {
+    background-color: #FFF;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.order-summary h3 {
+    font-size: 2em;
+    color: #E2A7C0;
+    margin-bottom: 20px;
+}
+
+.product-summary {
+    margin-bottom: 15px;
+}
+
+.product-summary h3 {
+    font-size: 1.3em;
+    color: #333;
+    font-weight: 600;
+}
+
+.product-summary p {
+    color: #555;
+}
+
+/* Total Price */
+#total-price {
+    font-size: 1.6em;
+    font-weight: bold;
+    color: #E2A7C0;
+    text-align: right;
+}
+
+/* Payment Form Styling */
+.payment-form {
+    background-color: #FFF;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.payment-form label {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.payment-form input {
+    width: 100%;
+    padding: 12px;
+    font-size: 1em;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+}
+
+.payment-form input:focus {
+    border-color: #E2A7C0;
+}
+
+/* Button Styling */
+button {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    background-color: #E2A7C0;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #F9C4D2;
+}
+
+button:focus {
+    outline: 3px solid #F9C4D2;
+    outline-offset: 2px;
+}
+
+/* Footer */
+.footer {
+    background-color: #F9F9F9;
+    padding: 50px 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.footer h2 {
+    margin-bottom: 10px;
+}
+
+.footer p {
+    line-height: 1.6;
+}

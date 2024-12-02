@@ -142,20 +142,53 @@ body {
 .product-box p {
     margin-bottom: 20px;
 }
-
-.buy-button {
-    padding: 10px 20px;
-    background-color: #E2A7C0;
-    color: white;
-    border: none;
-    border-radius: 5px;
+/* General Button Styles */
+button, .buy-button {
+    padding: 12px 25px;  /* Adjust padding for larger button size */
+    font-size: 1em;       /* Set a readable font size */
+    font-weight: bold;    /* Make the button text bold */
+    text-align: center;
+    border-radius: 5px;   /* Rounded corners */
     cursor: pointer;
-    transition: background-color 0.3s;
+    outline: none;        /* Remove outline when focused */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
 }
 
-.buy-button:hover {
-    background-color: #F9C4D2;
+/* Default Buy Now Button */
+.buy-button {
+    background-color: #E2A7C0;  /* Soft pink background */
+    color: white;               /* White text */
+    border: 2px solid #E2A7C0;  /* Border matching button background */
 }
+
+/* Hover Effect for Buy Now Button */
+.buy-button:hover {
+    background-color: #F9C4D2;  /* Lighter pink on hover */
+    border-color: #F9C4D2;      /* Change border color on hover */
+    transform: scale(1.05);      /* Slight zoom effect for emphasis */
+}
+
+/* Focus Effect for Buy Now Button */
+.buy-button:focus {
+    outline: 3px solid #F9C4D2;  /* Add focus ring with lighter pink */
+    outline-offset: 2px;         /* Offset the focus ring slightly */
+}
+
+/* Disabled State for Buy Now Button */
+.buy-button:disabled {
+    background-color: #E2A7C0;
+    color: #ccc;                 /* Light grey text when disabled */
+    cursor: not-allowed;         /* Show not-allowed cursor */
+    border: 2px solid #ccc;      /* Light grey border */
+}
+
+/* Apply to any buttons like "Buy Now" or other button classes */
+button:hover {
+    background-color: #F9C4D2;
+    color: white;
+    transform: scale(1.05);
+}
+
 
 /* Footer */
 .footer {

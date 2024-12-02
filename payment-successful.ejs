@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="payment-successful.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo.png" alt="Logo" style="height: 40px;">
+        </div>
+        <div class="nav-links">
+            <a href="login.html">My Account</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="land.html">Home</a>
+        </div>
+    </nav>
+
+    <div class="payment-successful-section">
+        <h2>Payment Successful!</h2>
+        
+        <div class="order-summary">
+            <h3>Order Summary</h3>
+            <p>Order ID: <%= orderId %></p>
+            <p>Total Amount: $<%= totalAmount.toFixed(2) %></p>
+        </div>
+
+        <div class="next-steps">
+            <h3>What would you like to do next?</h3>
+            <ul>
+                <li><a href="/dashboard">Go to Dashboard</a></li>
+                <li><a href="/store">Continue Shopping</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Add any additional JavaScript functionality here if needed
+    </script>
+</body>
+</html>

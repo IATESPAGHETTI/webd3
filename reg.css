@@ -25,6 +25,8 @@ body {
 
 h1 {
     margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
 }
 
 .form-group {
@@ -35,6 +37,8 @@ h1 {
 label {
     display: block;
     margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: 600;
 }
 
 input[type="text"],
@@ -45,6 +49,7 @@ input[type="password"] {
     border: 1px solid #ccc; /* Border color */
     border-radius: 5px; /* Rounded corners */
     transition: border-color 0.3s; /* Smooth transition for focus effect */
+    font-size: 16px;
 }
 
 input[type="text"]:focus,
@@ -54,7 +59,7 @@ input[type="password"]:focus {
     outline: none; /* Remove default outline */
 }
 
-.login-button {
+button[type="submit"] {
     width: 100%;
     padding: 10px;
     background-color: #E2A7C0;
@@ -62,10 +67,12 @@ input[type="password"]:focus {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
     transition: background-color 0.3s;
 }
 
-.login-button:hover {
+button[type="submit"]:hover {
     background-color: #F9C4D2;
 }
 
@@ -76,6 +83,7 @@ input[type="password"]:focus {
 .register-link a {
     color: #E2A7C0;
     text-decoration: none;
+    font-size: 14px;
 }
 
 .register-link a:hover {
